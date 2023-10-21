@@ -1,0 +1,51 @@
+{
+	"name": "Cardscommerce",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [
+			"Sample"
+		],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "card_swipe_commerce_court.csv",
+				"container": "demo"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "date_time",
+				"type": "String"
+			},
+			{
+				"name": "device_uuid",
+				"type": "String"
+			},
+			{
+				"name": "device_building",
+				"type": "String"
+			},
+			{
+				"name": "event",
+				"type": "String"
+			},
+			{
+				"name": "badge_uuid",
+				"type": "String"
+			},
+			{
+				"name": "cardholder_type",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,27 @@
+{
+	"name": "Execute_Pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute Pipeline1",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Append_Variable",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"Inputdataset": "ard_swipe_commerce_court.csv",
+						"Container": "demo"
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-10-16T14:56:11Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

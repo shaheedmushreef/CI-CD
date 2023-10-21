@@ -1,0 +1,64 @@
+{
+	"name": "Input_parameter",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Container": {
+				"type": "string",
+				"defaultValue": "demo"
+			},
+			"FileName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().FileName",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().Container",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "date_time",
+				"type": "String"
+			},
+			{
+				"name": "device_uuid",
+				"type": "String"
+			},
+			{
+				"name": "device_building",
+				"type": "String"
+			},
+			{
+				"name": "event",
+				"type": "String"
+			},
+			{
+				"name": "badge_uuid",
+				"type": "String"
+			},
+			{
+				"name": "cardholder_type",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
